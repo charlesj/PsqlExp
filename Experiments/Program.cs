@@ -9,9 +9,8 @@ namespace Experiments
 		public static void Main(string[] args)
 		{
 			var connection = GetConnection();
-			var experiment = new SimpleDapperExperiment();
+			var experiment = new DapperInsertExperiment();
 			experiment.Execute(connection);
-
 
 #if DEBUG
 			Console.ReadLine();
