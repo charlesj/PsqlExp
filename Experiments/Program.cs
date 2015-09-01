@@ -10,14 +10,7 @@ namespace Experiments
 	{
 		public static void Main(string[] args)
 		{
-			var upgrader = DeployChanges.To
-				.PostgresqlDatabase(ConfigurationManager.ConnectionStrings["calculus"].ConnectionString)
-				.WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
-				.LogToConsole()
-				.Build();
 
-			var result = upgrader.PerformUpgrade();
-			Console.WriteLine(result.ToJson(true));
 #if DEBUG
 			Console.ReadLine();
 #endif
