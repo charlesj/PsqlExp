@@ -37,6 +37,14 @@
       <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="DbUp, Version=0.0.0.40695, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
+      <HintPath>..\packages\dbup.3.2.1\lib\NET35\DbUp.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="DbUp.Postgresql, Version=3.2.0.0, Culture=neutral, PublicKeyToken=4b419c53bdfd4cbf, processorArchitecture=MSIL">
+      <HintPath>..\packages\dbup-postgresql.3.2.1\lib\NET35\DbUp.Postgresql.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Faker, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\packages\Faker.1.2\lib\Faker.dll</HintPath>
       <Private>True</Private>
