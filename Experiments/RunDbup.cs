@@ -7,7 +7,7 @@ namespace Experiments
 {
 	public class RunDbup
 	{
-		public void Execute()
+		public static void Execute()
 		{
 			var upgrader = DeployChanges.To
 							.PostgresqlDatabase(ConfigurationManager.ConnectionStrings["calculus"].ConnectionString)

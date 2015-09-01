@@ -8,6 +8,7 @@ namespace Experiments
 	{
 		public static void Main(string[] args)
 		{
+			RunDbup.Execute();
 			var experiment = new DapperPostDbUpExperiment();
 			experiment.Execute(GetConnection());
 #if DEBUG
