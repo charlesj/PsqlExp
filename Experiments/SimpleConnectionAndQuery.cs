@@ -3,9 +3,9 @@ using Npgsql;
 
 namespace Experiments
 {
-	public class Program
+	public class SimpleConnectionAndQuery
 	{
-		public static void Main(string[] args)
+		public void Execute()
 		{
 			var query = "select * from distributors";
 
@@ -18,10 +18,6 @@ namespace Experiments
 			var result = command.ExecuteReader();
 			Console.WriteLine("result {0}", result.HasRows);
 			conn.Close();
-
-#if DEBUG
-			Console.ReadLine();
-#endif
 		}
 	}
 }
