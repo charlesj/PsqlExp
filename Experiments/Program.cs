@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Configuration;
+using System.Reflection;
+using DbUp;
 using Npgsql;
 
 namespace Experiments
@@ -8,10 +10,14 @@ namespace Experiments
 	{
 		public static void Main(string[] args)
 		{
-			var connection = GetConnection();
-			var experiment = new DapperInsertExperiment();
-			experiment.Execute(connection);
+			var upgrader = DeployChanges.To
+				.PostgresqlDatabase(ConfigurationManager.ConnectionStrings["calculus"].ConnectionString)
+				.WithScriptsEmbeddedInAssembly(Assembly.GetExecutingAssembly())
+				.LogToConsole()
+				.Build();
 
+			var result = upgrader.PerformUpgrade();
+			Console.WriteLine(result.ToJson(true));
 #if DEBUG
 			Console.ReadLine();
 #endif
