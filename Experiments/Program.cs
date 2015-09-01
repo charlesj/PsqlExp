@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Configuration;
 using Npgsql;
 
 namespace Experiments
@@ -7,21 +8,20 @@ namespace Experiments
 	{
 		public static void Main(string[] args)
 		{
-			var query = "select * from distributors";
+			var connection = GetConnection();
+			var experiment = new SimpleDapperExperiment();
+			experiment.Execute(connection);
 
-			var connstring = "Server=localhost;Port=5432;User Id=newton;Password=apple;Database=calculus;";
-
-			var conn = new NpgsqlConnection(connstring);
-			conn.Open();
-
-			var command = new NpgsqlCommand(query, conn);
-			var result = command.ExecuteReader();
-			Console.WriteLine("result {0}", result.HasRows);
-			conn.Close();
 
 #if DEBUG
 			Console.ReadLine();
 #endif
+		}
+
+		private static NpgsqlConnection GetConnection()
+		{
+			var connString = ConfigurationManager.ConnectionStrings["calculus"].ConnectionString;
+			return new NpgsqlConnection(connString);
 		}
 	}
 }
