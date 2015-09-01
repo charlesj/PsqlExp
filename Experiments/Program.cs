@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Configuration;
-using System.Reflection;
-using DbUp;
 using Npgsql;
 
 namespace Experiments
@@ -10,7 +8,8 @@ namespace Experiments
 	{
 		public static void Main(string[] args)
 		{
-
+			var experiment = new DapperPostDbUpExperiment();
+			experiment.Execute(GetConnection());
 #if DEBUG
 			Console.ReadLine();
 #endif

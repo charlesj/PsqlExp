@@ -69,9 +69,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DapperInsertExperiment.cs" />
+    <Compile Include="DapperPostDbUpExperiment.cs" />
     <Compile Include="ObjectExtensions.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RunDbup.cs" />
     <Compile Include="SimpleConnectionAndQuery.cs" />
     <Compile Include="SimpleDapperExperiment.cs" />
   </ItemGroup>
